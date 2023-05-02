@@ -10,8 +10,8 @@ else
 mysql_secure_installation << _EOF_
 
 Y
-Commoncore42
-Commoncore42
+$MYSQL_ROOT_PASSWORD
+$MYSQL_ROOT_PASSWORD
 Y
 n
 Y

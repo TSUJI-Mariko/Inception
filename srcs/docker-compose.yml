@@ -11,7 +11,7 @@ services:
       - wordpress_data:/var/www/html
     restart: always
     networks:
-      - docker_networks
+      - docker-network
 
   mariadb:
     container_name: mariadb
@@ -19,7 +19,7 @@ services:
     volumes:
       - mariadb_data:/var/lib/mysql
     networks:
-      - docker_networks
+      - docker-network
     restart: always
     env_file:
       - .env
@@ -37,7 +37,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
     networks:
-      - docker_networks
+      - docker-network
 volumes:
   mariadb_data:
     driver: local
@@ -52,4 +52,4 @@ volumes:
       device: /home/mtsuji/data/wordpress
       o: bind
 networks:
-  docker_networks:
+  docker-network:

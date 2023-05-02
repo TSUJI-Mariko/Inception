@@ -10,8 +10,8 @@ else
 mysql_secure_installation << _EOF_
 
 Y
-root4life
-root4life
+Commoncore42
+Commoncore42
 Y
 n
 Y

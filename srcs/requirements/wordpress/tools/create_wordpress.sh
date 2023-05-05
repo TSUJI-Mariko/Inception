@@ -17,6 +17,21 @@ else
 	sed -i "s/localhost/$MYSQL_HOSTNAME/g" wp-config-sample.php
 	sed -i "s/database_name_here/$MYSQL_DATABASE/g" wp-config-sample.php
 	cp wp-config-sample.php wp-config.php
+
+
+	wp --allow-root core install \
+		--url="$WP_URL" \
+		--title="$WP_TITLE" \
+		--admin_user="$WP_ADMIN_USR" \
+		--admin_password="$WP_ADMIN_PWD" \
+		--admin_email="$WP_ADMIN_EMAIL" \
+		--skip-email
+
+	# Create additional user
+	wp --allow-root user create "$WP_USR" "$WP_EMAIL" \
+		--role=editor \
+		--user_pass="$WP_PWD" \
+		--skip-email
 fi
 
 exec "$@"

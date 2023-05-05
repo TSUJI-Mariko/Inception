@@ -44,7 +44,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/mtsuji/data/mysql
+      device: /home/mtsuji/data/mariadb
       o: bind
   wordpress_data:
     driver: local
